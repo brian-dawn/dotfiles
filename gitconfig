@@ -1,0 +1,19 @@
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	cmd = diffmerge --nosplash --merge -t1='Local' -t2='Base (merged)' -t3='Remote' --result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = true
+[mergetool]
+	keepBackup = false
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = diffmerge --nosplash -t1='Local' -t2='Remote' $LOCAL $REMOTE
+[user]
+	name = Brian Dawn
+	email = brian.dawn@code42.com
+[push]
+	default = upstream
+[core]
+	excludesfile = /Users/brian.dawn/.gitignore_global
+	ignore = dirty
