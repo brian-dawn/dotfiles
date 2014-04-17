@@ -54,11 +54,11 @@ set spelllang=en_us
 set listchars=tab:>.,trail:.
 set list
 
-" load pathogen which will autoload plugins.
-runtime repos/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect('repos')
-call pathogen#infect('plugins')
+set hlsearch
 
-" haskell-mode configuration.
-let g:haddock_browser="google-chrome"
-au BufEnter *.hs compiler ghc
+" load pathogen which will autoload plugins.
+" try to autoload all submodules.
+runtime vim-pathogen/autoload/pathogen.vim
+call pathogen#infect('../submodules/{}')
+"call pathogen#infect('plugins')
+

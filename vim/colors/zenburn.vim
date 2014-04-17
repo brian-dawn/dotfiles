@@ -120,7 +120,7 @@ hi FoldColumn      guifg=#93b3a3 guibg=#3f4040
 hi Folded          guifg=#93b3a3 guibg=#3f4040
 hi Function        guifg=#efef8f
 hi Identifier      guifg=#efdcbc
-hi IncSearch       guibg=#f8f893 guifg=#385f38
+hi IncSearch       guibg=#f8f893 guifg=#4d4d4d
 hi Keyword         guifg=#f0dfaf gui=bold
 hi Label           guifg=#dfcfaf gui=underline
 hi LineNr          guifg=#9fafaf guibg=#262626
@@ -133,7 +133,7 @@ hi PreCondit       guifg=#dfaf8f gui=bold
 hi PreProc         guifg=#ffcfaf gui=bold
 hi Question        guifg=#ffffff gui=bold
 hi Repeat          guifg=#ffd7a7 gui=bold
-hi Search          guifg=#ffffe0 guibg=#284f28
+hi Search          guifg=#ffffe0 guibg=#4d4d4d
 hi SpecialChar     guifg=#dca3a3 gui=bold
 hi SpecialComment  guifg=#82a282 gui=bold
 hi Special         guifg=#cfbfaf
