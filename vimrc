@@ -51,8 +51,7 @@ nmap <leader>s :set spell!<CR>
 set spelllang=en_us
 
 " highlight tabs and trailing spaces
-set listchars=tab:>.,trail:.
-set list
+set list listchars=tab:→\ ,trail:·
 
 set hlsearch
 

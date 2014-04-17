@@ -17,3 +17,5 @@
 [core]
 	excludesfile = /Users/brian.dawn/.gitignore_global
 	ignore = dirty
+[color]
+	ui = auto

@@ -12,6 +12,25 @@ precmd () { vcs_info }
 
 PS1="%{$fg[yellow]%}%~ \$vcs_info_msg_0_%{$fg[red]%}$ %{$reset_color%}%"
 
+# VI mode
+set -o vi
+
+# VI mode cursor indicators.
+zle -N zle-keymap-select
+zle-keymap-select () {
+    if [ "$TERM" = "xterm-256color" ]; then
+        if [ $KEYMAP = vicmd ]; then
+            echo -ne "\e[4 q"
+        else
+            echo -ne "\e[2 q"
+        fi
+    fi
+}
+
+
+# Disable VI mode lag, note this may cause issues with other commands.
+export KEYTIMEOUT=1
+
 export TERM=xterm-256color
 export GREP_OPTIONS='--color=auto'
 export PKG_CONFIG_PATH="/usr/X11/lib/pkgconfig"
@@ -45,5 +64,4 @@ alias vim=mvim
 alias bd-git-head-changed-files='git diff-tree --no-commit-id --name-only -r HEAD'
 alias bd-dot-make-links='python ~/.bin/makelinks.py'
 alias bd-dot-add-submodule='python ~/.bin/add-submodule.py'
-
 
