@@ -1,27 +1,16 @@
-" NOTE to update all the git submodules first run
-" git submodule init
-" git submodule update
+set encoding=utf-8
 
-" A note to self:
-" Need A.vim, supertab, haskell mode, and some sort of module that shows
-" autocompletion window automatically. Also it appears macvim has a feature to
-" autowrap lines?
-" A.vim - Switch between source and header files.
-" :A switches
-" :AV switches opens other in verticle pane.
+" Set space to leader.
+nnoremap <SPACE> <Nop>
+let mapleader = "\<Space>"
 
-" Spelling
-" \s to toggle spellcheck on or off.
-"
-
-let g:neocomplcache_enable_at_startup = 1
-
-
+" Filetype stuff.
 filetype on
 filetype plugin on
 filetype indent on
 syntax on
 
+" Tab stuff.
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -33,15 +22,18 @@ set noswapfile
 
 set mouse=a
 
-" Used to be 11
 colorscheme zenburn
-set guifont=Consolas\ 9
+
+set guifont=Powerline\ Consolas:h11
+
+" Set vertical bar character, note with consolas there's still a little bit of
+" space.
+set fillchars=vert:\│
 
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions+=LlRrb
 set guioptions-=LlRrb
-
 
 set incsearch " Search as you type.
 set ignorecase " Ignore the case of a search.
@@ -59,5 +51,14 @@ set hlsearch
 " try to autoload all submodules.
 runtime vim-pathogen/autoload/pathogen.vim
 call pathogen#infect('../submodules/{}')
-"call pathogen#infect('plugins')
 
+" Airline
+let g:airline_enable_branch     = 1
+let g:airline_enable_syntastic  = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+set laststatus=2
+set noshowmode
+
+" Random keybindings.
+imap jj <Esc>

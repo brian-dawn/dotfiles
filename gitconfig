@@ -6,7 +6,9 @@
 [mergetool]
 	keepBackup = false
 [diff]
-	tool = diffmerge
+	tool = mvimdiff
+[difftool "mvimdiff"]
+    cmd = mvim -f -d \"$LOCAL\" \"$REMOTE\"
 [difftool "diffmerge"]
 	cmd = diffmerge --nosplash -t1='Local' -t2='Remote' $LOCAL $REMOTE
 [user]
@@ -19,3 +21,8 @@
 	ignore = dirty
 [color]
 	ui = auto
+    grep = always
+[difftool]
+	prompt = false
+[alias]
+	d = difftool

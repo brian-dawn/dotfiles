@@ -1,6 +1,8 @@
 # Created by newuser for 4.3.10
 autoload -U colors && colors
 
+export ANT_OPTS="-Xmx1024m -Xms512m"
+
 # Prompt.
 # Git integration and all that jazz.
 setopt prompt_subst
@@ -12,30 +14,15 @@ precmd () { vcs_info }
 
 PS1="%{$fg[yellow]%}%~ \$vcs_info_msg_0_%{$fg[red]%}$ %{$reset_color%}%"
 
-# VI mode
-set -o vi
-
-# VI mode cursor indicators.
-zle -N zle-keymap-select
-zle-keymap-select () {
-    if [ "$TERM" = "xterm-256color" ]; then
-        if [ $KEYMAP = vicmd ]; then
-            echo -ne "\e[4 q"
-        else
-            echo -ne "\e[2 q"
-        fi
-    fi
-}
-
-
 # Disable VI mode lag, note this may cause issues with other commands.
 export KEYTIMEOUT=1
 
 export TERM=xterm-256color
-export GREP_OPTIONS='--color=auto'
+export GREP_OPTIONS='--color=always'
 export PKG_CONFIG_PATH="/usr/X11/lib/pkgconfig"
 export SHELL=/bin/zsh
-export PATH=$PATH:~/.bin/
+export PATH=$PATH:~/.bin
+export PATH=/usr/local/bin:$PATH
 alias clang++='clang++ -Wall -Werror -Wextra -Wno-c++11-extensions -std=c++11 -stdlib=libc++'
 
 # Git completion.
@@ -58,7 +45,21 @@ alias pip=pip3
 
 # OSX pipe into clipboard.
 alias clipboard=pbcopy
+# OSX create my fullscreen window.
+alias iterm='open -n -a iTerm'
+
 alias vim=mvim
+alias vi='/usr/local/bin/vim'
+alias vimdiff=mvimdiff
+alias truecrypt='/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text'
+alias tc=truecrypt
+alias open-ports='sudo lsof -i -P | grep -i "listen"'
+
+alias clojure='lein repl'
+
+# postgres
+alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 # my own alias's/tools.
 alias bd-git-head-changed-files='git diff-tree --no-commit-id --name-only -r HEAD'
