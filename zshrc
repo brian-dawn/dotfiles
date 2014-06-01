@@ -23,6 +23,10 @@ export PKG_CONFIG_PATH="/usr/X11/lib/pkgconfig"
 export SHELL=/bin/zsh
 export PATH=$PATH:~/.bin
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/opt/ruby/bin:$PATH
+export GOPATH=$HOME/.go
+export GOROOT=`go env GOROOT`
+export PATH=$PATH:$GOROOT/bin
 alias clang++='clang++ -Wall -Werror -Wextra -Wno-c++11-extensions -std=c++11 -stdlib=libc++'
 
 # Git completion.
@@ -54,6 +58,7 @@ alias vimdiff=mvimdiff
 alias truecrypt='/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text'
 alias tc=truecrypt
 alias open-ports='sudo lsof -i -P | grep -i "listen"'
+alias sorry='sudo !!'
 
 alias clojure='lein repl'
 

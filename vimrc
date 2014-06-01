@@ -59,6 +59,7 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 set laststatus=2
 set noshowmode
+set ttimeoutlen=50
 
 " Random keybindings.
 imap jj <Esc>
