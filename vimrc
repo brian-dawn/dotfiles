@@ -63,3 +63,8 @@ set ttimeoutlen=50
 
 " Random keybindings.
 imap jj <Esc>
+
+
+
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1

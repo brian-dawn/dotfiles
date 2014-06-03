@@ -58,3 +58,12 @@
 [submodule "submodules/vim-go.git"]
 	path = submodules/vim-go.git
 	url = https://github.com/fatih/vim-go.git
+[submodule "submodules/vim-cucumber.git"]
+	path = submodules/vim-cucumber.git
+	url = https://github.com/tpope/vim-cucumber.git
+[submodule "submodules/vim-ruby.git"]
+	path = submodules/vim-ruby.git
+	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "submodules/vim-rails.git"]
+	path = submodules/vim-rails.git
+	url = https://github.com/tpope/vim-rails.git
