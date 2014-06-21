@@ -59,6 +59,7 @@ alias truecrypt='/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text'
 alias tc=truecrypt
 alias open-ports='sudo lsof -i -P | grep -i "listen"'
 alias sorry='sudo !!'
+alias ll='ls -l'
 
 alias clojure='lein repl'
 

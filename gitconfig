@@ -1,5 +1,5 @@
 [merge]
-	tool = diffmerge
+	tool = vimdiff
 [mergetool "diffmerge"]
 	cmd = diffmerge --nosplash --merge -t1='Local' -t2='Base (merged)' -t3='Remote' --result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = true

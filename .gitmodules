@@ -67,3 +67,6 @@
 [submodule "submodules/vim-rails.git"]
 	path = submodules/vim-rails.git
 	url = https://github.com/tpope/vim-rails.git
+[submodule "submodules/nerdtree.git"]
+	path = submodules/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git
