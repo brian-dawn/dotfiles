@@ -52,9 +52,6 @@ alias clipboard=pbcopy
 # OSX create my fullscreen window.
 alias iterm='open -n -a iTerm'
 
-alias vim=mvim
-alias vi='/usr/local/bin/vim'
-alias vimdiff=mvimdiff
 alias truecrypt='/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text'
 alias tc=truecrypt
 alias open-ports='sudo lsof -i -P | grep -i "listen"'

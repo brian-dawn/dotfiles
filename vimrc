@@ -1,5 +1,7 @@
 set encoding=utf-8
 
+set clipboard=unnamed
+
 " Set space to leader.
 nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
