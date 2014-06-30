@@ -24,7 +24,6 @@ set noswapfile
 
 set mouse=a
 
-colorscheme zenburn
 
 set guifont=Powerline\ Consolas:h11
 
@@ -68,3 +67,7 @@ imap jj <Esc>
 
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
+
+
+colorscheme solarized
+set background=dark
