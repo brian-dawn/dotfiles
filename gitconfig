@@ -1,28 +1,3 @@
-[merge]
-	tool = vimdiff
-[mergetool "diffmerge"]
-	cmd = diffmerge --nosplash --merge -t1='Local' -t2='Base (merged)' -t3='Remote' --result=$MERGED $LOCAL $BASE $REMOTE
-	trustExitCode = true
-[mergetool]
-	keepBackup = false
-[diff]
-	tool = mvimdiff
-[difftool "mvimdiff"]
-    cmd = mvim -f -d \"$LOCAL\" \"$REMOTE\"
-[difftool "diffmerge"]
-	cmd = diffmerge --nosplash -t1='Local' -t2='Remote' $LOCAL $REMOTE
 [user]
+	email = brian.t.dawn@gmail.com
 	name = Brian Dawn
-	email = brian.dawn@code42.com
-[push]
-	default = upstream
-[core]
-	excludesfile = /Users/brian.dawn/.gitignore_global
-	ignore = dirty
-[color]
-	ui = auto
-    grep = always
-[difftool]
-	prompt = false
-[alias]
-	d = difftool
