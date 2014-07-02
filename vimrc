@@ -18,6 +18,8 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 
+set backspace=indent,eol,start
+
 " Disable swap files, open all the vim files!
 " WARNING could be dangerous.
 set noswapfile
