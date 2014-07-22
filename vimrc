@@ -105,10 +105,15 @@ hi SignColumn ctermbg=0 "Change syntastic gutter to something not horrible.
 " disable the ask dialogue for local vimrc plugin.
 let g:localvimrc_ask = 0
 
+
 " appearance.
 colorscheme solarized
 set background=dark
 set guifont=Powerline\ Consolas:h11
+
+" easymotion.
+hi EasyMotionTarget2First ctermbg=none ctermfg=cyan
+hi EasyMotionTarget2Second ctermbg=none ctermfg=cyan
 
 " editor ui options.
 set mouse=a
@@ -120,7 +125,11 @@ set guioptions+=LlRrb
 set guioptions-=LlRrb
 
 " custom keybindings.
-map <Leader> <Plug>(easymotion-prefix)
 imap jj <Esc>
 map <Leader>u :GundoToggle<CR>
 
+map <Leader> <Plug>(easymotion-prefix)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
