@@ -120,7 +120,7 @@ set guioptions+=LlRrb
 set guioptions-=LlRrb
 
 " custom keybindings.
-imap jj <Esc>                                   " leave insert mode with `jj`.
-map <Leader> <Plug>(easymotion-prefix)          " change easymotion leader key to just <leader>.
-map <Leader>u :GundoToggle<CR>                  " change gundo to toggle on `<leader>u`.
+map <Leader> <Plug>(easymotion-prefix)
+imap jj <Esc>
+map <Leader>u :GundoToggle<CR>
 
