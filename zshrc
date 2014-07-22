@@ -43,6 +43,10 @@ case $OSTYPE in darwin*)
     ;;
 esac
 
+alias ..='cd ..'
+alias ../..='cd ../..'
+alias ../../..='cd ../../..'
+
 alias python=python3
 alias ipython=ipython3
 alias pip=pip3
@@ -58,7 +62,14 @@ alias open-ports='sudo lsof -i -P | grep -i "listen"'
 alias sorry='sudo !!'
 alias ll='ls -l'
 
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+
 alias clojure='lein repl'
+
+# tree is awesome!!
+# ag is awesome!!
+
+alias gitgraph='git log --oneline --graph'
 
 # postgres
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
