@@ -47,29 +47,28 @@ alias ..='cd ..'
 alias ../..='cd ../..'
 alias ../../..='cd ../../..'
 
-alias python=python3
-alias ipython=ipython3
-alias pip=pip3
-
 # OSX pipe into clipboard.
 alias clipboard=pbcopy
 # OSX create my fullscreen window.
 alias iterm='open -n -a iTerm'
 
-alias truecrypt='/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text'
 alias tc=truecrypt
 alias open-ports='sudo lsof -i -P | grep -i "listen"'
 alias sorry='sudo !!'
 alias ll='ls -l'
 
-alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+#alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 
 alias clojure='lein repl'
 
 # tree is awesome!!
 # ag is awesome!!
 
-alias gitgraph='git log --oneline --graph'
+alias gg='git log --oneline --graph'
+alias gs='git status'
+# Git current commit hash.
+alias gh='git rev-parse HEAD'
+alias git-fuck-it='git clean -d -X -f; git reset --hard'
 
 # postgres
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
@@ -80,3 +79,5 @@ alias bd-git-head-changed-files='git diff-tree --no-commit-id --name-only -r HEA
 alias bd-dot-make-links='python ~/.bin/makelinks.py'
 alias bd-dot-add-submodule='python ~/.bin/add-submodule.py'
 
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

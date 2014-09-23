@@ -6,9 +6,9 @@
 [mergetool]
 	keepBackup = false
 [diff]
-	tool = mvimdiff
-[difftool "mvimdiff"]
-    cmd = mvim -f -d \"$LOCAL\" \"$REMOTE\"
+	tool = vimdiff
+[difftool "vimdiff"]
+    cmd = vim -f -d \"$LOCAL\" \"$REMOTE\"
 [difftool "diffmerge"]
 	cmd = diffmerge --nosplash -t1='Local' -t2='Remote' $LOCAL $REMOTE
 [user]
@@ -19,6 +19,8 @@
 [core]
 	excludesfile = /Users/brian.dawn/.gitignore_global
 	ignore = dirty
+	editor = /usr/bin/vim
+	autocrlf = input
 [color]
 	ui = auto
     grep = always

@@ -57,13 +57,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " passive plugins (no new key combos added).
 NeoBundle 'bling/vim-airline'               " nice looking statusline.
-NeoBundle 'tpope/vim-endwise'               " automatically adds endings to blocks ex: do/end in ruby.
 NeoBundle 'scrooloose/syntastic'            " automatically does syntax checking when a file is saved.
 NeoBundle 'flazz/vim-colorschemes'          " collection of colorschemes.
-NeoBundle 'Raimondi/delimitMate'            " automatically creates closing brackets/parens/quotes.
-NeoBundle 'Valloric/YouCompleteMe'          " autocomplete engine.
-NeoBundle 'embear/vim-localvimrc'
-
+NeoBundle 'embear/vim-localvimrc'           " Support localvimrc files for specifying project specific indent options.
 NeoBundle 'ervandew/supertab'
 
 " active plugins (add key combos).
@@ -72,14 +68,24 @@ NeoBundle 'rking/ag.vim'                    " Ag search `:Ag [search]`
 NeoBundle 'tomtom/tcomment_vim'             " `gc` to toggle comments for a visual block.
 NeoBundle 'Lokaltog/vim-easymotion'         " `<leader>[motion] to jump to a hint.
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'sjl/gundo.vim'
+NeoBundle 'sjl/gundo.vim'                   " undo trees.
+NeoBundle 'guns/vim-sexp.git'
+NeoBundle 'tpope/vim-sexp-mappings-for-regular-people.git'
+NeoBundle 'xolox/vim-easytags'              " auto-generate ctags
+NeoBundle 'xolox/vim-misc'
 
 " programming language integration.
 NeoBundle 'klen/python-mode'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'tpope/vim-cucumber'
+NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'tpope/vim-fugitive'              " git cmds example: `Gblame`
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-fireplace'
+NeoBundle 'tpope/vim-classpath'
+
+" deprecated/removed plugins.
+"NeoBundle 'Valloric/YouCompleteMe'          " autocomplete engine.
 
 " Required:
 call neobundle#end()
@@ -97,23 +103,26 @@ set ttimeoutlen=50
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
 
-" syntastic configuration.
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_cucumber_checkers = ['']
-hi SignColumn ctermbg=0 "Change syntastic gutter to something not horrible.
-
 " disable the ask dialogue for local vimrc plugin.
 let g:localvimrc_ask = 0
-
 
 " appearance.
 colorscheme solarized
 set background=dark
 set guifont=Powerline\ Consolas:h11
 
+" syntastic configuration.
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_cucumber_checkers = ['']
+hi SignColumn ctermbg=0
+
 " easymotion.
 hi EasyMotionTarget2First ctermbg=none ctermfg=cyan
 hi EasyMotionTarget2Second ctermbg=none ctermfg=cyan
+
+" easy-tags.
+set tags=./tags;   " Search for tags upwards from the current file's directory.
+let g:easytags_dynamic_files = 1    " Also look for project-specific tags files.
 
 " editor ui options.
 set mouse=a
@@ -133,3 +142,7 @@ map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
+
+
+" Filetype specifics
+autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
