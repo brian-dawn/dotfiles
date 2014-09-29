@@ -73,6 +73,7 @@ NeoBundle 'guns/vim-sexp.git'
 NeoBundle 'tpope/vim-sexp-mappings-for-regular-people.git'
 NeoBundle 'xolox/vim-easytags'              " auto-generate ctags
 NeoBundle 'xolox/vim-misc'
+NeoBundle 'benmills/vimux'                  " tmux integration with vim.
 
 " programming language integration.
 NeoBundle 'klen/python-mode'
@@ -133,6 +134,11 @@ set guioptions-=T  "remove toolbar
 set guioptions+=LlRrb
 set guioptions-=LlRrb
 
+" vimscript functions.
+function! Strip(input_string)
+    return substitute(a:input_string, '^\s*\(.\{-}\)\s*$', '\1', '')
+endfunction
+
 " custom keybindings.
 imap jj <Esc>
 map <Leader>u :GundoToggle<CR>
@@ -143,6 +149,8 @@ omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
+map rp :VimuxPromptCommand<CR>
+map <LEADER>p :VimuxPromptCommand<CR><C-r>"<CR>
 
 " Filetype specifics
 autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab

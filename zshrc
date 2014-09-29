@@ -79,5 +79,9 @@ alias bd-git-head-changed-files='git diff-tree --no-commit-id --name-only -r HEA
 alias bd-dot-make-links='python ~/.bin/makelinks.py'
 alias bd-dot-add-submodule='python ~/.bin/add-submodule.py'
 
+alias docker-kill-all='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+alias docker-kill-exited="docker ps -a | awk '/Exit/ {print $1}' | xargs docker rm"
+
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export DOCKER_HOST=tcp://192.168.59.104:2375
