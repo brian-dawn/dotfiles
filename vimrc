@@ -149,6 +149,14 @@ omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
+function! VimuxSlime()
+    call VimuxSendText(@v)
+    call VimuxSendKeys("Enter")
+endfunction
+
+map <LEADER>v :mark '<CR>vipy:VimuxPromptCommand<CR><C-r>"<CR>:normal ''<CR>
+map <LEADER>g ggvGY:VimuxPromptCommand<CR><C-r>"<CR>
+
 map rp :VimuxPromptCommand<CR>
 map <LEADER>p :VimuxPromptCommand<CR><C-r>"<CR>
 

@@ -85,3 +85,4 @@ alias docker-kill-exited="docker ps -a | awk '/Exit/ {print $1}' | xargs docker 
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export DOCKER_HOST=tcp://192.168.59.104:2375
+export C42_CORE="${HOME}/repos/core"
