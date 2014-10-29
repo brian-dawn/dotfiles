@@ -7,9 +7,8 @@
 " cs[a][b]              change surround - will convert surrounding [a] to [b].
 
 set encoding=utf-8
+set number
 
-" used for tmux/osx copypaste.
-set clipboard=unnamed
 
 " set space to leader.
 nnoremap <SPACE> <Nop>
@@ -162,3 +161,8 @@ map <LEADER>p :VimuxPromptCommand<CR><C-r>"<CR>
 
 " Filetype specifics
 autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
+" used for tmux/osx copypaste.
+set clipboard=unnamed
+" bug where vim . causes clipboard to break, this fixes it.
+map <LEADER>c :set clipboard=unnamed<CR>
