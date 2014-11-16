@@ -83,6 +83,7 @@ NeoBundle 'tpope/vim-fugitive'              " git cmds example: `Gblame`
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'tpope/vim-classpath'
+NeoBundle 'amdt/vim-niji'                   " rainbow parens
 
 " deprecated/removed plugins.
 "NeoBundle 'Valloric/YouCompleteMe'          " autocomplete engine.
@@ -166,3 +167,15 @@ autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set clipboard=unnamed
 " bug where vim . causes clipboard to break, this fixes it.
 map <LEADER>c :set clipboard=unnamed<CR>
+
+
+let g:niji_dark_colours = [['196', 'red1'],
+                             \ ['214', 'orange1'],
+                             \ ['226', 'yellow1'],
+                             \ ['154', 'greenyellow'],
+                             \ ['192', 'green1'],
+                             \ ['48', 'springgreen1'],
+                             \ ['195', 'cyan1'],
+                             \ ['105', 'slateblue1'],
+                             \ ['201', 'magenta1'],
+                             \ ['141', 'purple1']]
