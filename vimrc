@@ -73,6 +73,8 @@ NeoBundle 'tpope/vim-sexp-mappings-for-regular-people.git'
 NeoBundle 'xolox/vim-easytags'              " auto-generate ctags
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'benmills/vimux'                  " tmux integration with vim.
+NeoBundle 'godlygeek/tabular'               " tabular text alignment.
+NeoBundle 'szw/vim-ctrlspace'               " Buffer management
 
 " programming language integration.
 NeoBundle 'klen/python-mode'
@@ -84,12 +86,32 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'tpope/vim-classpath'
 NeoBundle 'amdt/vim-niji'                   " rainbow parens
+NeoBundle 'wting/rust.vim'
+NeoBundle 'cespare/vim-toml'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'eagletmt/ghcmod-vim'             " Haskell
+NeoBundle 'eagletmt/neco-ghc'               " More haskell.
+NeoBundle 'hylang/vim-hy'
+
+" Special compiled plugins.
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 
 " deprecated/removed plugins.
 "NeoBundle 'Valloric/YouCompleteMe'          " autocomplete engine.
 
 " Required:
 call neobundle#end()
+
+" autohighlight under cursor.
+autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 " airline configuration.
 let g:airline_enable_branch     = 1
@@ -99,6 +121,9 @@ let g:airline_right_sep = ''
 set laststatus=2
 set noshowmode
 set ttimeoutlen=50
+
+" We need this line so it plays nice with ctrlspace.
+let g:airline_exclude_preview = 1
 
 " ruby completion stuff.
 let g:rubycomplete_buffer_loading = 1
@@ -143,39 +168,44 @@ endfunction
 imap jj <Esc>
 map <Leader>u :GundoToggle<CR>
 
+" easymotion leader + movement key
 map <Leader> <Plug>(easymotion-prefix)
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
+" Easymotion search integration. Disabled for now.
+" map  / <Plug>(easymotion-sn)
+" omap / <Plug>(easymotion-tn)
+" map  n <Plug>(easymotion-next)
+" map  N <Plug>(easymotion-prev)
 
+" Vimux configuration.
 function! VimuxSlime()
     call VimuxSendText(@v)
     call VimuxSendKeys("Enter")
 endfunction
-
 map <LEADER>v :mark '<CR>vipy:VimuxPromptCommand<CR><C-r>"<CR>:normal ''<CR>
 map <LEADER>g ggvGY:VimuxPromptCommand<CR><C-r>"<CR>
-
 map rp :VimuxPromptCommand<CR>
 map <LEADER>p :VimuxPromptCommand<CR><C-r>"<CR>
+
+" Tabularize configuration (auto format on equal sign.
+nmap ga :Tabularize /=<CR>
+vmap ga :Tabularize /=<CR>
 
 " Filetype specifics
 autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 " used for tmux/osx copypaste.
 set clipboard=unnamed
+
 " bug where vim . causes clipboard to break, this fixes it.
 map <LEADER>c :set clipboard=unnamed<CR>
 
-
 let g:niji_dark_colours = [['196', 'red1'],
-                             \ ['214', 'orange1'],
-                             \ ['226', 'yellow1'],
-                             \ ['154', 'greenyellow'],
-                             \ ['192', 'green1'],
-                             \ ['48', 'springgreen1'],
-                             \ ['195', 'cyan1'],
-                             \ ['105', 'slateblue1'],
-                             \ ['201', 'magenta1'],
-                             \ ['141', 'purple1']]
+                         \ ['214', 'orange1'],
+                         \ ['226', 'yellow1'],
+                         \ ['154', 'greenyellow'],
+                         \ ['192', 'green1'],
+                         \ ['48',  'springgreen1'],
+                         \ ['195', 'cyan1'],
+                         \ ['105', 'slateblue1'],
+                         \ ['201', 'magenta1'],
+                         \ ['141', 'purple1']]

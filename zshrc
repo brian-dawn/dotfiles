@@ -1,3 +1,4 @@
+# Tee is a cool program.
 autoload -U colors && colors
 
 export ANT_OPTS="-Xmx1024m -Xms512m"
@@ -27,7 +28,8 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/opt/ruby/bin:$PATH
 export PATH=$PATH:$GOROOT/bin
 export PATH="$PATH:$HOME/.rvm/bin"
-
+export PATH=$HOME/.cabal/bin:$PATH
+export PATH="$HOME/Library/Haskell/bin:$PATH"
 export DOCKER_HOST=tcp://192.168.59.104:2375
 
 export C42_CORE="${HOME}/repos/core"
@@ -38,16 +40,14 @@ alias clang++='clang++ -Wall -Werror -Wextra -Wno-c++11-extensions -std=c++11 -s
 autoload -U compinit && compinit
 
 # OSX specific garbage.
-case $OSTYPE in darwin*)
+if [[ "$(uname)" == "Darwin" ]]; then
     export CLICOLOR=1
     export LSCOLORS=GxFxCxDxBxegedabagaced
-    ;;
-*)
 
     export JAVA_HOME='/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home'
     export ANDROID_HOME=/usr/local/opt/android-sdk
 
-    alias ls='ls --color=auto'
+    #alias ls='ls --color=auto'
     # For max fun gh | clipboard
     alias clipboard=pbcopy
     alias open-ports='sudo lsof -i -P | grep -i "listen"'
@@ -55,8 +55,7 @@ case $OSTYPE in darwin*)
     # postgres
     alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
     alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-    ;;
-esac
+fi
 
 # Awful person aliases
 alias ..='cd ..'
@@ -85,3 +84,4 @@ alias docker-kill-exited="docker ps -a | awk '/Exit/ {print $1}' | xargs docker 
 
 alias rust-up='curl https://static.rust-lang.org/rustup.sh | sudo sh'
 
+export PATH=/usr/local/sbin:$PATH
