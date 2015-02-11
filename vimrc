@@ -75,6 +75,7 @@ NeoBundle 'xolox/vim-misc'
 NeoBundle 'benmills/vimux'                  " tmux integration with vim.
 NeoBundle 'godlygeek/tabular'               " tabular text alignment.
 NeoBundle 'szw/vim-ctrlspace'               " Buffer management
+NeoBundle 'terryma/vim-multiple-cursors'    " sublime like cursors, ctrl+n
 
 " programming language integration.
 NeoBundle 'klen/python-mode'
@@ -92,6 +93,9 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'eagletmt/ghcmod-vim'             " Haskell
 NeoBundle 'eagletmt/neco-ghc'               " More haskell.
 NeoBundle 'hylang/vim-hy'
+
+NeoBundle 'jaxbot/semantic-highlight.vim'
+"NeoBundle 'vim-clojure-highlight'
 
 " Special compiled plugins.
 NeoBundle 'Shougo/vimproc.vim', {
@@ -111,7 +115,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 call neobundle#end()
 
 " autohighlight under cursor.
-autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+"autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 " airline configuration.
 let g:airline_enable_branch     = 1
