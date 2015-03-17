@@ -9,6 +9,8 @@
 set encoding=utf-8
 set number
 
+" treat pixie files as if they were clojure.
+au BufRead,BufNewFile *.pxi setfiletype clojure
 
 " set space to leader.
 nnoremap <SPACE> <Nop>
@@ -56,10 +58,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " passive plugins (no new key combos added).
 NeoBundle 'bling/vim-airline'               " nice looking statusline.
-NeoBundle 'scrooloose/syntastic'            " automatically does syntax checking when a file is saved.
+"NeoBundle 'scrooloose/syntastic'            " automatically does syntax checking when a file is saved.
 NeoBundle 'flazz/vim-colorschemes'          " collection of colorschemes.
 NeoBundle 'embear/vim-localvimrc'           " Support localvimrc files for specifying project specific indent options.
 NeoBundle 'ervandew/supertab'
+NeoBundle 'chriskempson/tomorrow-theme', { 'rtp' : 'vim' }
 
 " active plugins (add key combos).
 NeoBundle 'kien/ctrlp.vim'                  " `<ctrl>p` then type filenames.
@@ -70,7 +73,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'sjl/gundo.vim'                   " undo trees.
 NeoBundle 'guns/vim-sexp.git'
 NeoBundle 'tpope/vim-sexp-mappings-for-regular-people.git'
-NeoBundle 'xolox/vim-easytags'              " auto-generate ctags
+"NeoBundle 'xolox/vim-easytags'              " auto-generate ctags
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'benmills/vimux'                  " tmux integration with vim.
 NeoBundle 'godlygeek/tabular'               " tabular text alignment.
@@ -78,7 +81,7 @@ NeoBundle 'szw/vim-ctrlspace'               " Buffer management
 NeoBundle 'terryma/vim-multiple-cursors'    " sublime like cursors, ctrl+n
 
 " programming language integration.
-NeoBundle 'klen/python-mode'
+"NeoBundle 'klen/python-mode'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'tpope/vim-cucumber'
 NeoBundle 'elixir-lang/vim-elixir'
@@ -94,8 +97,11 @@ NeoBundle 'eagletmt/ghcmod-vim'             " Haskell
 NeoBundle 'eagletmt/neco-ghc'               " More haskell.
 NeoBundle 'hylang/vim-hy'
 
+NeoBundle 'venantius/vim-cljfmt'
+
 NeoBundle 'jaxbot/semantic-highlight.vim'
 "NeoBundle 'vim-clojure-highlight'
+NeoBundle 'suan/vim-instant-markdown'
 
 " Special compiled plugins.
 NeoBundle 'Shougo/vimproc.vim', {
@@ -137,7 +143,11 @@ let g:rubycomplete_rails = 1
 let g:localvimrc_ask = 0
 
 " appearance.
-colorscheme solarized
+set t_Co=256
+" Needed for tmux to not screw up colors.
+set t_ut=
+"colorscheme solarized
+colorscheme Tomorrow-Night
 set background=dark
 set guifont=Powerline\ Consolas:h11
 
@@ -169,7 +179,7 @@ function! Strip(input_string)
 endfunction
 
 " custom keybindings.
-imap jj <Esc>
+"imap jj <Esc>
 map <Leader>u :GundoToggle<CR>
 
 " easymotion leader + movement key
@@ -189,6 +199,15 @@ map <LEADER>v :mark '<CR>vipy:VimuxPromptCommand<CR><C-r>"<CR>:normal ''<CR>
 map <LEADER>g ggvGY:VimuxPromptCommand<CR><C-r>"<CR>
 map rp :VimuxPromptCommand<CR>
 map <LEADER>p :VimuxPromptCommand<CR><C-r>"<CR>
+
+" imap <C-a> <Home>
+" imap <C-e> <Esc>
+
+" todo the following doesn't work.
+nmap <C-e> $
+imap <C-e> <C-O>A
+map <C-a> <Home>
+imap <C-a> <Home>
 
 " Tabularize configuration (auto format on equal sign.
 nmap ga :Tabularize /=<CR>
