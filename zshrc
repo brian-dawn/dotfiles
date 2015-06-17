@@ -1,4 +1,4 @@
-source ~/repos/antigen/antigen.zsh
+source ~/.antigen.zsh
 
 #Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -23,23 +23,10 @@ antigen apply
 
 export CASE_SENSITIVE=true
 
-# Tee is a cool program.
 autoload -U colors && colors
 
 export ANT_OPTS="-Xmx1024m -Xms512m"
-#
-# # Prompt.
-# # Git integration and all that jazz.
-# setopt prompt_subst
-# autoload -Uz vcs_info
-# zstyle ':vcs_info:*' formats \
-#   '%F{5}[%F{2}%b%F{5}] %F{2}%c%F{3}%u%f'
-# zstyle ':vcs_info:*' enable git 
-# precmd () { vcs_info }
-#
-# PS1="%{$fg[yellow]%}%~ \$vcs_info_msg_0_%{$fg[red]%}$ %{$reset_color%}%"
 
-export HOST=thoreau
 export TERM=xterm-256color
 export PKG_CONFIG_PATH="/usr/X11/lib/pkgconfig"
 export SHELL=/bin/zsh
