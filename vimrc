@@ -58,11 +58,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " passive plugins (no new key combos added).
 NeoBundle 'bling/vim-airline'               " nice looking statusline.
-"NeoBundle 'scrooloose/syntastic'            " automatically does syntax checking when a file is saved.
 NeoBundle 'flazz/vim-colorschemes'          " collection of colorschemes.
 NeoBundle 'embear/vim-localvimrc'           " Support localvimrc files for specifying project specific indent options.
 NeoBundle 'ervandew/supertab'
-NeoBundle 'chriskempson/tomorrow-theme', { 'rtp' : 'vim' }
+NeoBundle 'chriskempson/base16-vim'
 
 " active plugins (add key combos).
 NeoBundle 'kien/ctrlp.vim'                  " `<ctrl>p` then type filenames.
@@ -73,7 +72,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'sjl/gundo.vim'                   " undo trees.
 NeoBundle 'guns/vim-sexp.git'
 NeoBundle 'tpope/vim-sexp-mappings-for-regular-people.git'
-"NeoBundle 'xolox/vim-easytags'              " auto-generate ctags
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'benmills/vimux'                  " tmux integration with vim.
 NeoBundle 'godlygeek/tabular'               " tabular text alignment.
@@ -81,14 +79,13 @@ NeoBundle 'szw/vim-ctrlspace'               " Buffer management
 NeoBundle 'terryma/vim-multiple-cursors'    " sublime like cursors, ctrl+n
 
 " programming language integration.
-"NeoBundle 'klen/python-mode'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'tpope/vim-cucumber'
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'tpope/vim-fugitive'              " git cmds example: `Gblame`
 NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-fireplace'
-NeoBundle 'tpope/vim-classpath'
+" NeoBundle 'tpope/vim-fireplace'
+" NeoBundle 'tpope/vim-classpath'
 NeoBundle 'amdt/vim-niji'                   " rainbow parens
 NeoBundle 'wting/rust.vim'
 NeoBundle 'cespare/vim-toml'
@@ -100,22 +97,8 @@ NeoBundle 'hylang/vim-hy'
 NeoBundle 'venantius/vim-cljfmt'
 
 NeoBundle 'jaxbot/semantic-highlight.vim'
-"NeoBundle 'vim-clojure-highlight'
 NeoBundle 'suan/vim-instant-markdown'
 
-" Special compiled plugins.
-NeoBundle 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make -f make_mac.mak',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
-
-" deprecated/removed plugins.
-"NeoBundle 'Valloric/YouCompleteMe'          " autocomplete engine.
 
 " Required:
 call neobundle#end()

@@ -30,7 +30,14 @@
      clojure
      ruby
      go
-     haskell)
+     haskell
+     c-c++
+     restclient
+     rust
+     erlang-elixir
+     company-mode
+     ;; (colors :variables colors-enable-rainbow-identifiers t)
+    )
    ;; List of additional packages that will be installed wihout being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
@@ -47,6 +54,7 @@
   "Initialization function.
 This function is called at the very startup of Spacemacs initialization
 before layers configuration."
+  (setq spacemacs-erlang-elixir-use-edts t)
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
@@ -158,6 +166,9 @@ before layers configuration."
 layers configuration."
 
   (setq powerline-default-separator nil)
+  (global-linum-mode) ;; Turn on line numbers by default.
+  ;; (push '(base16-paraiso-dark . (150 150)) colors-theme-identifiers-sat&light)
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
