@@ -33,50 +33,40 @@ export SHELL=/bin/zsh
 
 export GREP_OPTIONS='--color=always'
 
-export GOPATH=$HOME/.go
-export GOROOT=`go env GOROOT`
-
-export PATH=$PATH:~/cabal/ghc-mod-sandbox/.cabal-sandbox/bin
 export PATH=$PATH:~/.bin
 export PATH=/usr/local/bin:$PATH
+
+# Linux brew
+export PATH=$HOME/.linuxbrew/bin:$PATH
+
+# Golang
+export GOPATH=$HOME/.go
+export GOROOT=`go env GOROOT`
 export PATH=$PATH:$GOROOT/bin
 
-export PATH=/usr/local/opt/ruby/bin:$PATH
-export PATH="$PATH:$HOME/.rvm/bin"
-
+# Haskell
+export PATH=$PATH:~/cabal/ghc-mod-sandbox/.cabal-sandbox/bin
 export PATH=$HOME/.cabal/bin:$PATH
-export PATH="$HOME/Library/Haskell/bin:$PATH"
 
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+# Ruby
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH=/usr/local/opt/ruby/bin:$PATH
 
-export C42_CORE="${HOME}/repos/core"
+# RUST
+export RUST_SRC_PATH=$HOME/repos/rust/src
+export PATH=$HOME/repos/racer/target/release:$PATH
 
+# C++
 alias clang++='clang++ -Wall -Werror -Wextra -Wno-c++11-extensions -std=c++11 -stdlib=libc++'
+
+# Scheme
+# Must install rlwrap
+alias csi='rlwrap csi'
+alias scheme='rlwrap scheme'
+
 
 # Git completion.
 autoload -U compinit && compinit
-
-# OSX specific garbage.
-if [[ "$(uname)" == "Darwin" ]]; then
-    export CLICOLOR=1
-    export LSCOLORS=GxFxCxDxBxegedabagaced
-
-    export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.7.0_75.jdk/Contents/Home'
-    export ANDROID_HOME=/usr/local/opt/android-sdk
-
-    #alias ls='ls --color=auto'
-    # For max fun gh | clipboard
-    alias clipboard=pbcopy
-    alias open-ports='sudo lsof -i -P | grep -i "listen"'
-
-    alias emacs=Emacs
-
-    # postgres
-    alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-    alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-fi
 
 # Awful person aliases
 alias ..='cd ..'
@@ -86,6 +76,9 @@ alias ../../..='cd ../../..'
 alias sorry='sudo !!'
 alias ll='ls -l'
 alias clojure='lein repl'
+alias python=python3
+alias ipython=ipython3
+alias pip=pip3
 
 # Git aliases
 alias gg='git log --oneline --graph'

@@ -130,9 +130,9 @@ set t_Co=256
 " Needed for tmux to not screw up colors.
 set t_ut=
 "colorscheme solarized
-colorscheme Tomorrow-Night
-set background=dark
-set guifont=Powerline\ Consolas:h11
+"colorscheme Tomorrow-Night
+"set background=dark
+"set guifont=Powerline\ Consolas:h11
 
 " syntastic configuration.
 let g:syntastic_ruby_checkers = ['rubocop']

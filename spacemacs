@@ -22,21 +22,25 @@
      emacs-lisp
      (git :variables
           git-gutter-use-fringe t)
+     git
+     github
      markdown
+     company-mode
      org
      shell
      syntax-checking
      themes-megapack
      clojure
      ruby
+     python
      go
      haskell
      c-c++
      restclient
      rust
-     erlang-elixir
-     company-mode
-     ;; (colors :variables colors-enable-rainbow-identifiers t)
+     erlang
+     elixir
+     javascript
     )
    ;; List of additional packages that will be installed wihout being
    ;; wrapped in a layer. If you need some configuration for these
@@ -54,7 +58,13 @@
   "Initialization function.
 This function is called at the very startup of Spacemacs initialization
 before layers configuration."
+
+  ;; RUST
+  (setenv "RUST_SRC_PATH" "~/repos/rust/src")
+
+  ;; ELIXIR/ERLANG
   (setq spacemacs-erlang-elixir-use-edts t)
+
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
@@ -164,6 +174,7 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+
 
   (setq powerline-default-separator nil)
   (global-linum-mode) ;; Turn on line numbers by default.

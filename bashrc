@@ -121,6 +121,9 @@ export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 export PATH=~/.cabal/bin:$PATH
 
+export RUST_SRC_PATH=$HOME/repos/rust/src
+export PATH=$HOME/repos/racer/target/release:$PATH
+
 alias gs='git status'
 alias gco='git checkout'
 alias gp="git publish"
