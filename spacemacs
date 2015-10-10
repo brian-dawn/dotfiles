@@ -70,7 +70,7 @@ before layers configuration."
   (setq-default
    ;; Either `vim' or `emacs'. Evil is always enabled but if the variable
    ;; is `emacs' then the `holy-mode' is enabled at startup.
-   dotspacemacs-editing-style 'vim
+   dotspacemacs-editing-style 'emacs
    ;; If non nil output loading progress in `*Messages*' buffer.
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -97,7 +97,7 @@ before layers configuration."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Consolas"
-                               :size 18
+                               :size 20
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -175,9 +175,10 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
 
-
+  (setq clojure-enable-fancify-symbols t)
   (setq powerline-default-separator nil)
-  (global-linum-mode) ;; Turn on line numbers by default.
+  ;;(global-linum-mode) ;; Turn on line numbers by default.
+  (evil-force-normal-state)
   ;; (push '(base16-paraiso-dark . (150 150)) colors-theme-identifiers-sat&light)
 
 )
