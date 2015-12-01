@@ -36,6 +36,9 @@ export GREP_OPTIONS='--color=always'
 export PATH=$PATH:~/.bin
 export PATH=/usr/local/bin:$PATH
 
+# Emacs
+export PATH=$PATH:$HOME/.cask/bin
+
 # Linux brew
 export PATH=$HOME/.linuxbrew/bin:$PATH
 

@@ -1,6 +1,12 @@
 # Use Windows key as Mod 
 set $mod Mod4
 
+gaps outer 0
+gaps inner 18
+smart_gaps on
+
+new_window 1pixel
+
 # font for window titles. ISO 10646 = Unicode
 # change font for readability 
 font -bitstream-*-*-r-*-*-*-120-*-*-*-*-*-*
@@ -111,19 +117,18 @@ bindsym Escape mode "default"
 bindsym $mod+r mode "resize" 
 # Start i3bar to display a workspace bar (plus the system information # i3status 
 # finds out, if available) 
-bar { 
-status_command i3status 
+bar {
+  status_command i3status 
 #status_command i3blocks
- colors {
-        background #000000
-        statusline #00A5FF #that neon blue
-        separator #666666
-
-        focused_workspace  #4c7899 #285577 #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
-    }
+  colors {
+    separator #444444
+    background #222222
+    statusline #666666
+    focused_workspace #d70a53 #d70a53 #ffffff
+    active_workspace #333333 #333333 #888888
+    inactive_workspace #333333 #333333 #888888
+    urgent_workspace #eb709b #eb709b #ffffff
+  }
 } 
 
 # Force hangouts to be on workspace 9.
@@ -145,7 +150,7 @@ exec "xcape -e '#66=Escape'"
 
 exec "xmodmap ~/.xmodmaprc"
 
-
-
-
-
+client.focused #d70a53 #d70a53 #ffffff #8c0333
+client.focused_inactive #333333 #333333 #888888 #333333
+client.unfocused #333333 #333333 #888888 #333333
+client.urgent #eb709b #eb709b #ffffff #eb709b
