@@ -33,19 +33,32 @@ export SHELL=/bin/zsh
 
 export GREP_OPTIONS='--color=always'
 
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:~/.bin
 export PATH=/usr/local/bin:$PATH
 
+# emoji fix
+export LESS='--raw-control-chars'
+
+# Pixie-lang
+#alias pxi='docker run -it pixielang/pixie:latest'
+alias pxi=pixie-vm
+
 # Emacs
 export PATH=$PATH:$HOME/.cask/bin
+alias emacs="emacs -nw"
 
 # Linux brew
 export PATH=$HOME/.linuxbrew/bin:$PATH
 
+# FSharp
+alias fsharpi="rlwrap fsharpi --readline-"
+
 # Golang
 export GOPATH=$HOME/.go
-export GOROOT=`go env GOROOT`
-export PATH=$PATH:$GOROOT/bin
+#export GOROOT=`go env GOROOT`
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
 
 # Haskell
 export PATH=$PATH:~/cabal/ghc-mod-sandbox/.cabal-sandbox/bin
@@ -57,7 +70,7 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 
 # RUST
 export RUST_SRC_PATH=$HOME/repos/rust/src
-export PATH=$HOME/repos/racer/target/release:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 # C++
 alias clang++='clang++ -Wall -Werror -Wextra -Wno-c++11-extensions -std=c++11 -stdlib=libc++'
@@ -67,6 +80,8 @@ alias clang++='clang++ -Wall -Werror -Wextra -Wno-c++11-extensions -std=c++11 -s
 alias csi='rlwrap csi'
 alias scheme='rlwrap scheme'
 
+# Java/maven
+export MAVEN_OPTS='-Xmx1024m -XX:MaxDirectMemorySize=1024m -XX:MaxPermSize=256m'
 
 # Git completion.
 autoload -U compinit && compinit
@@ -79,9 +94,9 @@ alias ../../..='cd ../../..'
 alias sorry='sudo !!'
 alias ll='ls -l'
 alias clojure='lein repl'
-alias python=python3
-alias ipython=ipython3
-alias pip=pip3
+#alias python=python3
+#alias ipython=ipython3
+#alias pip=pip3
 
 # Git aliases
 alias gg='git log --oneline --graph'
@@ -102,10 +117,12 @@ alias docker-kill-exited="docker ps -a | awk '/Exit/ {print $1}' | xargs docker 
 
 alias rust-up='curl https://static.rust-lang.org/rustup.sh | sudo sh'
 
-alias pxi=pixie-vm
-
 export PATH=/usr/local/sbin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/brian/.sdkman"
+[[ -s "/Users/brian/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/brian/.sdkman/bin/sdkman-init.sh"

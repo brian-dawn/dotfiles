@@ -2,6 +2,15 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export PATH=$HOME/.local/bin:$PATH
+
+
+# RUST
+export RUST_SRC_PATH=$HOME/repos/rust/src
+export PATH=$HOME/.cargo/bin:$PATH
+
+
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -128,3 +137,6 @@ alias gs='git status'
 alias gco='git checkout'
 alias gp="git publish"
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/brian/.sdkman"
+[[ -s "/Users/brian/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/brian/.sdkman/bin/sdkman-init.sh"

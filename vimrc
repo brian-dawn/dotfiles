@@ -75,7 +75,7 @@ NeoBundle 'tpope/vim-sexp-mappings-for-regular-people.git'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'benmills/vimux'                  " tmux integration with vim.
 NeoBundle 'godlygeek/tabular'               " tabular text alignment.
-NeoBundle 'szw/vim-ctrlspace'               " Buffer management
+"NeoBundle 'szw/vim-ctrlspace'               " Buffer management
 NeoBundle 'terryma/vim-multiple-cursors'    " sublime like cursors, ctrl+n
 
 " programming language integration.
@@ -94,7 +94,7 @@ NeoBundle 'eagletmt/ghcmod-vim'             " Haskell
 NeoBundle 'eagletmt/neco-ghc'               " More haskell.
 NeoBundle 'hylang/vim-hy'
 
-NeoBundle 'venantius/vim-cljfmt'
+"NeoBundle 'venantius/vim-cljfmt'
 
 NeoBundle 'jaxbot/semantic-highlight.vim'
 NeoBundle 'suan/vim-instant-markdown'
