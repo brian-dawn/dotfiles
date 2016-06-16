@@ -8,6 +8,8 @@
 	# Push the current branch to the remote "origin", and set it to track
 	# the upstream branch
 	publish = "!git push -u origin $(git branch-name)"
+    dag = log --graph --oneline --decorate --date=relative --all
+
 [push]
 	default = simple
 [core]

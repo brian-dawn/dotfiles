@@ -57,8 +57,8 @@ alias fsharpi="rlwrap fsharpi --readline-"
 # Golang
 export GOPATH=$HOME/.go
 #export GOROOT=`go env GOROOT`
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN
+#export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
 
 # Haskell
 export PATH=$PATH:~/cabal/ghc-mod-sandbox/.cabal-sandbox/bin
@@ -71,6 +71,7 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 # RUST
 export RUST_SRC_PATH=$HOME/repos/rust/src
 export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.multirust/toolchains/stable/cargo/bin:$PATH
 
 # C++
 alias clang++='clang++ -Wall -Werror -Wextra -Wno-c++11-extensions -std=c++11 -stdlib=libc++'
@@ -97,6 +98,9 @@ alias clojure='lein repl'
 #alias python=python3
 #alias ipython=ipython3
 #alias pip=pip3
+
+# OCaml/Reason
+eval `opam config env`
 
 # Git aliases
 alias gg='git log --oneline --graph'
