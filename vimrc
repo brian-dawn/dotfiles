@@ -44,6 +44,7 @@ Plug 'embear/vim-localvimrc'           " Support localvimrc files for specifying
 Plug 'ervandew/supertab'
 Plug 'chriskempson/base16-vim'
 Plug 'scrooloose/syntastic'
+Plug 'chriskempson/base16-vim'
 
 " active plugins (add key combos).
 Plug 'kien/ctrlp.vim'                  " `<ctrl>p` then type filenames.
@@ -75,11 +76,11 @@ set ttimeoutlen=50
 " appearance.
 set t_Co=256
 " Needed for tmux to not screw up colors.
-"set t_ut=
+set t_ut=
 "colorscheme solarized
-"colorscheme Tomorrow-Night
-"set background=dark
-"set guifont=Powerline\ Consolas:h11
+colorscheme Tomorrow-Night
+set background=dark
+set guifont=Powerline\ Consolas:h11
 
 " easymotion.
 hi EasyMotionTarget2First ctermbg=none ctermfg=cyan
