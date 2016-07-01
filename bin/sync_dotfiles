@@ -2,6 +2,18 @@
 
 import os
 
+# Install necessary tools.
+
+# Install emacs pkg management
+os.system('curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python')
+
+# Install vim pkg management
+os.system('curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
+
+#################################
+# Create symlinks to this repo. #
+#################################
+
 # Assuming we are in dotfiles/bin.
 script_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 home_dir   = os.path.expanduser('~')
