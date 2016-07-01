@@ -44,8 +44,6 @@ Plug 'embear/vim-localvimrc'           " Support localvimrc files for specifying
 Plug 'ervandew/supertab'
 Plug 'chriskempson/base16-vim'
 Plug 'scrooloose/syntastic'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' } " async process plugin. Needed for some other plugins to work.
-Plug 'Shougo/neocomplete.vim'
 
 " active plugins (add key combos).
 Plug 'kien/ctrlp.vim'                  " `<ctrl>p` then type filenames.
@@ -65,20 +63,7 @@ Plug 'cespare/vim-toml'
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'keith/swift.vim'
 
-" Haskell
-Plug 'eagletmt/ghcmod-vim'
-Plug 'eagletmt/neco-ghc' " autocomplete
-
-
-
 call plug#end()
-
-" Haskell config
-" Lots of these pulled from http://www.stephendiehl.com/posts/vim_2016.html
-map <silent> tw :GhcModTypeInsert<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tq :GhcModType<CR>
-map <silent> te :GhcModTypeClear<CR>
 
 " airline configuration.
 let g:airline_left_sep = ''
