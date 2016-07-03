@@ -99,9 +99,6 @@ alias clojure='lein repl'
 #alias ipython=ipython3
 #alias pip=pip3
 
-# OCaml/Reason
-eval `opam config env`
-
 # Git aliases
 alias gg='git log --oneline --graph'
 alias gs='git status'
@@ -126,7 +123,3 @@ export PATH=/usr/local/sbin:$PATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/brian/.sdkman"
-[[ -s "/Users/brian/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/brian/.sdkman/bin/sdkman-init.sh"
