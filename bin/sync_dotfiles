@@ -13,6 +13,9 @@ os.system('curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubus
 # Install zsh pkg management
 os.system('curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.antigen.zsh')
 
+# Install rust up
+os.system('curl https://sh.rustup.rs -sSf | sh')
+
 #################################
 # Create symlinks to this repo. #
 #################################
