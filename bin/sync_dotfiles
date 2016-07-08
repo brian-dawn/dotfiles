@@ -1,15 +1,36 @@
 #!/usr/bin/env python
 
 import os
-
-#################################
-# Create symlinks to this repo. #
-#################################
+import time
+import shutil
 
 # Assuming we are in dotfiles/bin.
 script_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 home_dir   = os.path.expanduser('~')
 script_name = os.path.basename(__file__)
+
+##################
+# Oh My Fish fix #
+##################
+
+# oh my fish for some reason on install moves the fish config file and puts in a default one. WHY!
+# Move the created .config to a backup.
+config_dir = os.path.join(home_dir, '.config')
+new_config_dir = config_dir + str(round(time.time() * 1000)) + ".bak"
+try:
+    os.rename(config_dir, new_config_dir)
+except:
+    pass
+
+# Install fish shell pkg management
+os.system('curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish')
+
+# Delete the newly created config dir.
+shutil.rmtree(config_dir, ignore_errors=True)
+
+#################################
+# Create symlinks to this repo. #
+#################################
 
 links_to_make = [f for f in os.listdir(script_dir) if not f[0] == '.']
 
@@ -35,6 +56,4 @@ os.system('curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | py
 # Install vim pkg management
 os.system('curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
 
-# Install fish shell pkg management
-os.system('curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish')
 
