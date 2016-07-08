@@ -45,11 +45,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'embear/vim-localvimrc'           " Support localvimrc files for specifying project specific indent options.
 Plug 'ervandew/supertab'
 Plug 'chriskempson/base16-vim'
-Plug 'scrooloose/syntastic'
-Plug 'chriskempson/base16-vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --racer-completer', 'for': ['c', 'cpp', 'objc', 'objcpp', 'cs', 'python', 'rust'] }
-
 
 " active plugins (add key combos).
 Plug 'kien/ctrlp.vim'                  " `<ctrl>p` then type filenames.
