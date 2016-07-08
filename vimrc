@@ -7,6 +7,7 @@
 " <Ctrl>p               fuzzy file jump.
 " cs[a][b]              change surround - will convert surrounding [a] to [b].
 
+set shell=bash
 set encoding=utf-8
 set number
 
