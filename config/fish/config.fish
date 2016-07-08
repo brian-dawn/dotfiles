@@ -4,18 +4,6 @@ set -gx OMF_PATH $HOME/.local/share/omf
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
 
-################
-# Custom Theme #
-################
-
-# Base16 Shell
-if status --is-interactive
-  eval sh $HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh
-end
-
-# Disable greeting.
-set fish_greeting ""
-
 ####################
 # Custom Functions #
 ####################
@@ -63,3 +51,16 @@ add_to_path $HOME/.cask/bin
 
 # Golang
 add_to_path $GOPATH/bin
+
+################
+# Custom Theme #
+################
+
+# Base16 Shell
+if status --is-interactive
+  eval sh $HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh
+end
+
+# Disable greeting.
+set fish_greeting ""
+
