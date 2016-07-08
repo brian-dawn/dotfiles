@@ -1,10 +1,74 @@
 # Path to Oh My Fish install.
-set -q XDG_DATA_HOME
-  and set -gx OMF_PATH "$XDG_DATA_HOME/omf"
-  or set -gx OMF_PATH "$HOME/.local/share/omf"
+set -gx OMF_PATH $HOME/.local/share/omf
 
 # Customize Oh My Fish configuration path.
 #set -gx OMF_CONFIG "/Users/brian/.config/omf"
 
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
+
+################
+# Custom Theme #
+################
+
+set fish_color_normal dedede
+set fish_color_command 7aa6da
+set fish_color_quote e78c45
+set fish_color_redirection c397d8
+set fish_color_end c397d8
+set fish_color_error d54e53
+set fish_color_param ffffff
+set fish_color_comment 999999
+set fish_color_match 70c0b1
+set fish_color_search_match c397d8
+set fish_color_operator 70c0b1
+set fish_color_escape 70c0b1
+set fish_color_cwd b9ca4a
+
+# Disable greeting.
+set fish_greeting ""
+
+####################
+# Custom Functions #
+####################
+
+function add_to_path --description 'Persistently prepends paths to your PATH'
+  set --universal fish_user_paths $fish_user_paths $argv
+end
+
+#########################
+# Environment Variables #
+#########################
+
+# Golang
+set -x GOPATH $HOME/.go
+
+###########
+# Aliases #
+###########
+
+# Random
+alias ll 'ls -l'
+
+# Git aliases
+alias gg  'git log --oneline --graph'
+alias gs  'git status'
+alias gco 'git checkout'
+alias gh  'git rev-parse HEAD'
+
+# Emacs
+alias emacs 'emacs -nw'
+
+######################
+# Path Modifications #
+######################
+
+add_to_path $HOME/.local/bin
+add_to_path $HOME/.bin
+add_to_path /usr/local/bin
+
+# Emacs
+add_to_path $HOME/.cask/bin
+
+# Golang
+add_to_path $GOPATH/bin
