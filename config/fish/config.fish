@@ -22,6 +22,11 @@ set fish_color_operator 70c0b1
 set fish_color_escape 70c0b1
 set fish_color_cwd b9ca4a
 
+# Base16 Shell
+if status --is-interactive
+  eval sh $HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh
+end
+
 # Disable greeting.
 set fish_greeting ""
 
