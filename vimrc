@@ -41,11 +41,15 @@ call plug#begin('~/.vim/plugged')
 " passive plugins (no new key combos added).
 Plug 'bling/vim-airline'               " nice looking statusline.
 Plug 'flazz/vim-colorschemes'          " collection of colorschemes.
+Plug 'altercation/vim-colors-solarized'
 Plug 'embear/vim-localvimrc'           " Support localvimrc files for specifying project specific indent options.
 Plug 'ervandew/supertab'
 Plug 'chriskempson/base16-vim'
 Plug 'scrooloose/syntastic'
 Plug 'chriskempson/base16-vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --racer-completer', 'for': ['c', 'cpp', 'objc', 'objcpp', 'cs', 'python', 'rust'] }
+
 
 " active plugins (add key combos).
 Plug 'kien/ctrlp.vim'                  " `<ctrl>p` then type filenames.
@@ -60,10 +64,13 @@ Plug 'terryma/vim-multiple-cursors'    " sublime like cursors, ctrl+n
 
 " programming language integration.
 Plug 'tpope/vim-fugitive'              " git cmds example: `Gblame`
-Plug 'wting/rust.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 Plug 'cespare/vim-toml'
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'keith/swift.vim'
+Plug 'pangloss/vim-javascript'
+
 
 call plug#end()
 
@@ -100,6 +107,10 @@ set guioptions-=T  "remove toolbar
 set guioptions+=LlRrb
 set guioptions-=LlRrb
 
+" Rust
+set hidden
+let g:racer_cmd = "$HOME/.cargo/bin/racer"
+let $RUST_SRC_PATH="$HOME/repos/rust/src/"
 
 " custom keybindings.
 "imap jj <Esc>
