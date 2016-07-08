@@ -37,6 +37,9 @@ end
 # Environment Variables #
 #########################
 
+set -x TERM xterm-256color
+
+
 # Golang
 set -x GOPATH $HOME/.go
 
