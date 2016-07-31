@@ -38,6 +38,8 @@ alias gh  'git rev-parse HEAD'
 # Emacs
 alias emacs 'emacs -nw'
 
+alias vim 'nvim'
+
 ######################
 # Path Modifications #
 ######################
