@@ -122,3 +122,5 @@ export PATH=/usr/local/sbin:$PATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
