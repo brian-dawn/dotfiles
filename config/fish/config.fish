@@ -38,6 +38,8 @@ alias gh  'git rev-parse HEAD'
 # Emacs
 alias emacs 'emacs -nw'
 
+alias vim 'nvim'
+
 ######################
 # Path Modifications #
 ######################
@@ -64,3 +66,6 @@ end
 # Disable greeting.
 set fish_greeting ""
 
+# Loonux fixes
+setxkbmap -option 'caps:ctrl_modifier'
+xcape -e 'Caps_Lock=Escape'
