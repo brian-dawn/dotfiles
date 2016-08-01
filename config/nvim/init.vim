@@ -63,7 +63,6 @@ set list listchars=tab:→\ ,trail:·
 set hlsearch
 set clipboard=unnamedplus
 
-nmap <C-P> :FZF<CR>
 
 " theme
 let g:airline_theme='onedark'
@@ -108,6 +107,8 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 """""""""""""""""""""""""""""""""""""""""
 " FZF
 """""""""""""""""""""""""""""""""""""""""
+
+nmap <C-P> :FZF<CR>
 
 " fzf
 set rtp+=~/.fzf
