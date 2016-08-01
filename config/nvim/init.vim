@@ -23,8 +23,11 @@ Plug 'bling/vim-airline'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 
+" I <3 all of these tools.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/goyo.vim'
 
 
 
@@ -38,11 +41,9 @@ Plug 'junegunn/rainbow_parentheses.vim'
 
 call plug#end()
 
-" fzf
-set rtp+=~/.fzf
 
 set encoding=utf-8
-set number
+set number " show line numbers.
 
 " tab stuff.
 set tabstop=4
@@ -50,11 +51,8 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 
-
 set backspace=indent,eol,start
-
 set noswapfile  " disable swap files.
-
 set incsearch   " search as you type.
 set ignorecase  " ignore the case of a search.
 
@@ -62,9 +60,8 @@ set spelllang=en_us
 
 " highlight tabs and trailing spaces
 set list listchars=tab:→\ ,trail:·
-
 set hlsearch
-
+set clipboard=unnamedplus
 
 nmap <C-P> :FZF<CR>
 
@@ -78,7 +75,19 @@ let mapleader="\<SPACE>"
 " Set easymotion to leader not leader leader
 map <Leader> <Plug>(easymotion-prefix)
 
+"""""""""""""""""""""""""""""""""""""""""
+" EasyAlign ex gaip=
+"""""""""""""""""""""""""""""""""""""""""
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+"""""""""""""""""""""""""""""""""""""""""
+" DEOPLETE
+"""""""""""""""""""""""""""""""""""""""""
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
@@ -96,6 +105,12 @@ function! s:my_cr_function() abort
 endfunction
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+"""""""""""""""""""""""""""""""""""""""""
+" FZF
+"""""""""""""""""""""""""""""""""""""""""
+
+" fzf
+set rtp+=~/.fzf
 
 function! s:fzf_statusline()
   " Override statusline as you like

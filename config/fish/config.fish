@@ -66,3 +66,6 @@ end
 # Disable greeting.
 set fish_greeting ""
 
+# Loonux fixes
+setxkbmap -option 'caps:ctrl_modifier'
+xcape -e 'Caps_Lock=Escape'
